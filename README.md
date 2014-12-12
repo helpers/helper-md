@@ -5,21 +5,28 @@
 
 ## Usage examples
 
-With Handlebars:
+With [template]:
+
+```js
+template.partial('foo', {content: '# {{title}}', title: 'Heading'});
+```
+Specify the name of the template.
+
+```handlebars
+{{md "foo"}}
+```
+
+Or, if you use the helper With Handlebars or another engine, you may specify a file path:
 
 ```handlebars
 {{md "posts/foo.md"}}
 ```
 
-Results in something like:
+Both result in something like:
 
 
 ```html
 <h1>Heading</h1>
-<blockquote>
-<p>this is markdown</p>
-</blockquote>
-<p>foo bar baz</p>
 ```
 
 ## Install with [npm](npmjs.org)
