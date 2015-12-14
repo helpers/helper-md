@@ -8,7 +8,6 @@
 'use strict';
 
 var fs = require('fs');
-var hljs = require('highlight.js');
 var Remarkable = require('remarkable');
 var extend = require('extend-shallow');
 
@@ -77,20 +76,6 @@ function markdown(options) {
     langPrefix: 'lang-',
     linkify: true,
     typographer: false,
-    xhtmlOut: false,
-    highlight: function highlight(code, lang) {
-      try {
-        try {
-          return hljs.highlight(lang, code).value;
-        } catch (err) {
-          if (!/Unknown language/i.test(err.message)) {
-            throw err;
-          }
-          return hljs.highlightAuto(code).value;
-        }
-      } catch (err) {
-        return code;
-      }
-    }
+    xhtmlOut: false
   }, options));
 }

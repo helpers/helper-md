@@ -70,3 +70,24 @@ describe('lodash:', function () {
     _.template('<%= _.md("test/fixtures/a.md") %>', {}, settings).should.equal('<h1>AAA</h1>\n<blockquote>\n<p>this is aaa</p>\n</blockquote>\n');
   });
 });
+
+describe('highlight:', function (argument) {
+    var hljs = require('highlight.js');
+    it('should support syntax highlighting', function () {
+        md('test/fixtures/e.md', {highlight: function highlight(code, lang) {
+          try {
+            try {
+              return hljs.highlight(lang, code).value;
+            } catch (err) {
+              if (!/Unknown language/i.test(err.message)) {
+                throw err;
+              }
+              return hljs.highlightAuto(code).value;
+            }
+          } catch (err) {
+            return code;
+          }
+        }
+ }).should.equal('<h1>EEE</h1>\n<pre><code><span class="hljs-keyword">var</span> <span class="hljs-keyword">message</span> = <span class="hljs-string">\'This is an alert\'</span>;\nalert(<span class="hljs-keyword">message</span>);\n</code></pre>\n');
+    });
+});

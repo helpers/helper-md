@@ -29,6 +29,28 @@ Both result in something like:
 <h1>Heading</h1>
 ```
 
+## Syntax highlighting
+
+Syntax highlighting can be done via the 'highlight' option. Here you can pass code through a highlighter (e.g.  [Highlight.js](https://github.com/isagalaev/highlight.js)), for example:
+
+```js
+var hljs = require('highlight.js');
+md('test/fixtures/e.md', {highlight: function highlight(code, lang) {
+  try {
+    try {
+      return hljs.highlight(lang, code).value;
+    } catch (err) {
+      if (!/Unknown language/i.test(err.message)) {
+        throw err;
+      }
+      return hljs.highlightAuto(code).value;
+    }
+  } catch (err) {
+    return code;
+  }
+}
+```
+
 ## Install with [npm](npmjs.org)
 
 ```bash
@@ -108,9 +130,9 @@ To request or contribute a helper to the [github.com/helpers][helpers] org, plea
 ## Author
 
 **Jon Schlinkert**
- 
+
 + [github/helpers](https://github.com/helpers)
-+ [twitter/helpers](http://twitter.com/helpers) 
++ [twitter/helpers](http://twitter.com/helpers)
 
 ## License
 Copyright (c) 2014 Jon Schlinkert  
