@@ -47,7 +47,33 @@
   ],
   "verb": {
     "related": {
-      "list": []
-    }
+      "list": [
+        "assemble",
+        "handlebars-helpers",
+        "helper-markdown",
+        "templates",
+        "verb"
+      ]
+    },
+    "layout": "full",
+    "data": {
+      "nickname": "md"
+    },
+    "toc": {
+      "insert": true
+    },
+    "reflinks": [
+      "assemble",
+      "generator-verb",
+      "handlebars",
+      "handlebars-helpers",
+      "lodash",
+      "templates",
+      "underscore",
+      "verb"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ]
   }
 }

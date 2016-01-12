@@ -1,15 +1,15 @@
-# helper-md [![NPM version](https://badge.fury.io/js/helper-md.svg)](http://badge.fury.io/js/helper-md)
+# helper-md [![NPM version](https://img.shields.io/npm/v/helper-md.svg)](https://www.npmjs.com/package/helper-md) [![Build Status](https://img.shields.io/travis/jonschlinkert/helper-md.svg)](https://travis-ci.org/jonschlinkert/helper-md)
 
 > Markdown template helper. Uses remarkable to render markdown in templates. Should work with Handlebars, Lo-Dash or any template engine that supports helper functions.
 
-
 ## Usage examples
 
-With [template]:
+With [templates](https://github.com/jonschlinkert/templates):
 
 ```js
 template.partial('foo', {content: '# {{title}}', title: 'Heading'});
 ```
+
 Specify the name of the template.
 
 ```handlebars
@@ -24,45 +24,23 @@ Or, if you use the helper With Handlebars or another engine, you may specify a f
 
 Both result in something like:
 
-
 ```html
 <h1>Heading</h1>
 ```
 
-## Syntax highlighting
+## Install
 
-Syntax highlighting can be done via the 'highlight' option. Here you can pass code through a highlighter (e.g.  [Highlight.js](https://github.com/isagalaev/highlight.js)), for example:
+Install with [npm](https://www.npmjs.com/)
 
-```js
-var hljs = require('highlight.js');
-md('test/fixtures/e.md', {highlight: function highlight(code, lang) {
-  try {
-    try {
-      return hljs.highlight(lang, code).value;
-    } catch (err) {
-      if (!/Unknown language/i.test(err.message)) {
-        throw err;
-      }
-      return hljs.highlightAuto(code).value;
-    }
-  } catch (err) {
-    return code;
-  }
-}
+```sh
+$ npm i helper-md --save
 ```
-
-## Install with [npm](npmjs.org)
-
-```bash
-npm i helper-md --save
-```
-
 
 ## Register the helper
 
 > This should work with any engine, here are a few examples
 
-### [template]
+### [templates](https://github.com/jonschlinkert/templates)
 
 Register the helper for use with any template engine
 
@@ -70,31 +48,31 @@ Register the helper for use with any template engine
 template.helper('md', require('helper-md'));
 ```
 
-### [assemble]
+### [assemble](http://assemble.io)
 
-To register the helper for use with [assemble] v0.6.x:
+To register the helper for use with [assemble](http://assemble.io)v0.6.x:
 
 ```js
 assemble.helper('md', require('helper-md'));
 ```
 
-### [verb]
+### [verb](https://github.com/verbose/verb)
 
-Register the helper for use with [verb]:
+Register the helper for use with [verb](https://github.com/verbose/verb):
 
 ```js
 var verb = require('verb');
 verb.helper('md', require('helper-md'));
 ```
 
-### [handlebars]
+### [handlebars](http://www.handlebarsjs.com/)
 
 ```js
 var handlebars = require('handlebars');
 handlebars.registerHelper('md', require('helper-md'));
 ```
 
-### [Lo-Dash] or [underscore]
+### [Lo-Dash](https://lodash.com/) or [underscore](http://underscorejs.org)
 
 ```js
 var md = require('helper-md');
@@ -114,41 +92,38 @@ _.template('<%= md("posts/foo.md") %>', {}, settings);
 //=> '<h1>heading</h1>\n'
 ```
 
+## Related projects
 
-## Run tests
+* [assemble](https://www.npmjs.com/package/assemble): Static site generator for Grunt.js, Yeoman and Node.js. Used by Zurb Foundation, Zurb Ink, H5BP/Effeckt,… [more](https://www.npmjs.com/package/assemble) | [homepage](http://assemble.io)
+* [handlebars-helpers](https://www.npmjs.com/package/handlebars-helpers): 120+ Handlebars helpers in ~20 categories, for Assemble, YUI, Ghost or any Handlebars project. Includes… [more](https://www.npmjs.com/package/handlebars-helpers) | [homepage](https://github.com/assemble/handlebars-helpers)
+* [helper-markdown](https://www.npmjs.com/package/helper-markdown): Markdown template helper. Uses remarkable to render markdown in templates. Should work with Handlebars, Lo-Dash… [more](https://www.npmjs.com/package/helper-markdown) | [homepage](https://github.com/helpers/helper-markdown)
+* [templates](https://www.npmjs.com/package/templates): System for creating and managing template collections, and rendering templates with any node.js template engine.… [more](https://www.npmjs.com/package/templates) | [homepage](https://github.com/jonschlinkert/templates)
+* [verb](https://www.npmjs.com/package/verb): Documentation generator for GitHub projects. Verb is extremely powerful, easy to use, and is used… [more](https://www.npmjs.com/package/verb) | [homepage](https://github.com/verbose/verb)
 
-```bash
-npm test
+## Running tests
+
+Install dev dependencies:
+
+```sh
+$ npm i -d && npm test
 ```
 
-
 ## Contributing
-Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/helpers/helper-md/issues)
 
-To request or contribute a helper to the [github.com/helpers][helpers] org, please read [this contributing guide][guide] to get started.
+Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/jonschlinkert/helper-md/issues/new).
 
 ## Author
 
 **Jon Schlinkert**
 
-+ [github/helpers](https://github.com/helpers)
-+ [twitter/helpers](http://twitter.com/helpers)
+* [github/jonschlinkert](https://github.com/jonschlinkert)
+* [twitter/jonschlinkert](http://twitter.com/jonschlinkert)
 
 ## License
-Copyright (c) 2014 Jon Schlinkert  
-Released under the MIT license
+
+Copyright © 2015 [Jon Schlinkert](https://github.com/jonschlinkert)
+Released under the MIT license.
 
 ***
 
-_This file was generated by [verb](https://github.com/assemble/verb) on December 12, 2014. To update, run `npm i -g verb && verb`._
-
-[assemble]: https://github.com/assemble/assemble
-[generator-verb]: https://github.com/assemble/generator-verb
-[handlebars-helpers]: https://github.com/assemble/handlebars-helpers/
-[handlebars]: https://github.com/wycats/handlebars.js/
-[helpers]: https://github.com/helpers
-[Lo-Dash]: https://lodash.com/
-[template]: https://github.com/jonschlinkert/template
-[underscore]: https://github.com/jashkenas/underscore
-[verb]: https://github.com/assemble/verb
-[guide]: https://github.com/helpers/requests
+_This file was generated by [verb](https://github.com/verbose/verb) on December 14, 2015._
