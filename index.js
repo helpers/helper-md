@@ -20,7 +20,7 @@ module.exports = function md(name, opts) {
   extend(opts, opts.hash);
 
   // Support for Assemble, Verb and Template
-  if (this && this.app && this.app.views) {
+  if (this && this.app && typeof this.app.findPartial === 'function') {
     extend(opts, this.options.remarkable);
 
     try {
