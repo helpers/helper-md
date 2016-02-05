@@ -21,7 +21,12 @@ describe('md helper', function() {
     template = new Template();
     template.helper('md', md);
 
+    template.engine('md', require('engine-base'));
+
+    template.create('page');
+    template.create('partial', {isPartial: true});
     template.create('include', {isPartial: true});
+
     template.include('one', {content: '# heading <%= name %>', name: 'one'});
     template.partial('two', {content: '# heading <%= name %>', name: 'two'});
 

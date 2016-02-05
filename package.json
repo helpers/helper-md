@@ -1,7 +1,7 @@
 {
   "name": "helper-md",
   "description": "Markdown template helper. Uses remarkable to render markdown in templates. Should work with Handlebars, Lo-Dash or any template engine that supports helper functions.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/helpers/helper-md",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "repository": "helpers/helper-md",
@@ -20,11 +20,13 @@
     "test": "mocha"
   },
   "dependencies": {
-    "extend-shallow": "^0.2.0",
-    "highlight.js": "^8.4.0",
-    "remarkable": "^1.4.2"
+    "extend-shallow": "^2.0.1",
+    "highlight.js": "^9.1.0",
+    "remarkable": "^1.6.2"
   },
   "devDependencies": {
+    "engine-base": "^0.1.2",
+    "gulp-format-md": "^0.1.5",
     "handlebars": "^2.0.0",
     "lodash": "^2.4.1",
     "mocha": "*",
