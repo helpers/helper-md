@@ -20,18 +20,19 @@
     "test": "mocha"
   },
   "dependencies": {
+    "ent": "^2.2.0",
     "extend-shallow": "^2.0.1",
-    "highlight.js": "^9.1.0",
+    "fs-exists-sync": "^0.1.0",
     "remarkable": "^1.6.2"
   },
   "devDependencies": {
     "engine-base": "^0.1.2",
-    "gulp-format-md": "^0.1.5",
-    "handlebars": "^2.0.0",
-    "lodash": "^2.4.1",
-    "mocha": "*",
-    "should": "*",
-    "template": "^0.5.4"
+    "gulp-format-md": "^0.1.9",
+    "handlebars": "^4.0.5",
+    "highlight.js": "^9.3.0",
+    "lodash": "^4.12.0",
+    "mocha": "^2.4.5",
+    "templates": "^0.17.2"
   },
   "keywords": [
     "block",
@@ -48,6 +49,17 @@
     "template"
   ],
   "verb": {
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "data": {
+      "nickname": "md"
+    },
+    "plugins": [
+      "gulp-format-md"
+    ],
     "related": {
       "list": [
         "assemble",
@@ -56,13 +68,6 @@
         "templates",
         "verb"
       ]
-    },
-    "layout": "full",
-    "data": {
-      "nickname": "md"
-    },
-    "toc": {
-      "insert": true
     },
     "reflinks": [
       "assemble",
@@ -74,8 +79,8 @@
       "underscore",
       "verb"
     ],
-    "plugins": [
-      "gulp-format-md"
-    ]
+    "lint": {
+      "reflinks": true
+    }
   }
 }
