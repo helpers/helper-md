@@ -18,14 +18,14 @@ var ent = require('ent');
  * Expose `md` helper
  */
 
-module.exports = function(name, options, cb) {
+var helper = module.exports = function(name, options, cb) {
   if (typeof options === 'function') {
     cb = options;
     options = {};
   }
 
   if (typeof cb !== 'function') {
-    throw new Error('md async helper expects callback to be a function. Did you mean to use `md.sync`?');
+    return helper.sync.apply(this, arguments);
   }
   if (typeof this === 'undefined' || typeof this.app === 'undefined') {
     throw new Error('md async helper expects `app` to be exposed on the context');
@@ -60,7 +60,7 @@ module.exports = function(name, options, cb) {
   });
 };
 
-module.exports.sync = function(name, options) {
+helper.sync = function(name, options) {
   var ctx = this || {};
   var app = ctx.app || {};
 

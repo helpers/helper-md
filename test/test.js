@@ -95,6 +95,17 @@ describe('async', function() {
       cb();
     });
   });
+
+  it('should use sync helper when a callback is not passed:', function(cb) {
+    app.helper('md2', md);
+    app.page('home.md', {content: '<%= md2("one") %>'});
+
+    app.render('home.md', function(err, view) {
+      if (err) return cb(err);
+      assert.equal(view.content, '<h1>heading one</h1>\n');
+      cb();
+    });
+  });
 });
 
 describe('lodash:', function() {
