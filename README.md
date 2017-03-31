@@ -1,13 +1,13 @@
-# helper-md [![NPM version](https://img.shields.io/npm/v/helper-md.svg?style=flat)](https://www.npmjs.com/package/helper-md) [![NPM downloads](https://img.shields.io/npm/dm/helper-md.svg?style=flat)](https://npmjs.org/package/helper-md) [![Build Status](https://img.shields.io/travis/helpers/helper-md.svg?style=flat)](https://travis-ci.org/helpers/helper-md)
+# helper-md [![NPM version](https://img.shields.io/npm/v/helper-md.svg?style=flat)](https://www.npmjs.com/package/helper-md) [![NPM monthly downloads](https://img.shields.io/npm/dm/helper-md.svg?style=flat)](https://npmjs.org/package/helper-md)  [![NPM total downloads](https://img.shields.io/npm/dt/helper-md.svg?style=flat)](https://npmjs.org/package/helper-md) [![Linux Build Status](https://img.shields.io/travis/helpers/helper-md.svg?style=flat&label=Travis)](https://travis-ci.org/helpers/helper-md)
 
-Markdown template helper. Uses remarkable to render markdown in templates. Should work with Handlebars, Lo-Dash or any template engine that supports helper functions.
+> Markdown template helper. Uses remarkable to render markdown in templates. Should work with Handlebars, Lo-Dash or any template engine that supports helper functions.
 
 ## Install
 
 Install with [npm](https://www.npmjs.com/):
 
 ```sh
-$ npm install helper-md --save
+$ npm install --save helper-md
 ```
 
 ## Usage examples
@@ -47,54 +47,60 @@ Both result in something like:
 <h1>Heading</h1>
 ```
 
-## Related projects
+## About
 
-You might also be interested in these projects:
+### Related projects
 
-* [assemble](https://www.npmjs.com/package/assemble): Assemble is a powerful, extendable and easy to use static site generator for node.js. Used… [more](https://www.npmjs.com/package/assemble) | [homepage](https://github.com/assemble/assemble)
-* [handlebars-helpers](https://www.npmjs.com/package/handlebars-helpers): 120+ Handlebars helpers in ~20 categories, for Assemble, YUI, Ghost or any Handlebars project. Includes… [more](https://www.npmjs.com/package/handlebars-helpers) | [homepage](https://github.com/assemble/handlebars-helpers)
-* [helper-markdown](https://www.npmjs.com/package/helper-markdown): Markdown template helper. Uses remarkable to render markdown in templates. Should work with Handlebars, Lo-Dash… [more](https://www.npmjs.com/package/helper-markdown) | [homepage](https://github.com/helpers/helper-markdown)
-* [templates](https://www.npmjs.com/package/templates): System for creating and managing template collections, and rendering templates with any node.js template engine.… [more](https://www.npmjs.com/package/templates) | [homepage](https://github.com/jonschlinkert/templates)
-* [verb](https://www.npmjs.com/package/verb): Documentation generator for GitHub projects. Verb is extremely powerful, easy to use, and is used… [more](https://www.npmjs.com/package/verb) | [homepage](https://github.com/verbose/verb)
+* [assemble](https://www.npmjs.com/package/assemble): Get the rocks out of your socks! Assemble makes you fast at creating web projects… [more](https://github.com/assemble/assemble) | [homepage](https://github.com/assemble/assemble "Get the rocks out of your socks! Assemble makes you fast at creating web projects. Assemble is used by thousands of projects for rapid prototyping, creating themes, scaffolds, boilerplates, e-books, UI components, API documentation, blogs, building websit")
+* [handlebars-helpers](https://www.npmjs.com/package/handlebars-helpers): More than 130 Handlebars helpers in ~20 categories. Helpers can be used with Assemble, Generate… [more](https://github.com/assemble/handlebars-helpers) | [homepage](https://github.com/assemble/handlebars-helpers "More than 130 Handlebars helpers in ~20 categories. Helpers can be used with Assemble, Generate, Verb, Ghost, gulp-handlebars, grunt-handlebars, consolidate, or any node.js/Handlebars project.")
+* [helper-markdown](https://www.npmjs.com/package/helper-markdown): Markdown template helper. Uses remarkable to render markdown in templates. Should work with Handlebars, Lo-Dash… [more](https://github.com/helpers/helper-markdown) | [homepage](https://github.com/helpers/helper-markdown "Markdown template helper. Uses remarkable to render markdown in templates. Should work with Handlebars, Lo-Dash or any template engine that supports helper functions.")
+* [templates](https://www.npmjs.com/package/templates): System for creating and managing template collections, and rendering templates with any node.js template engine… [more](https://github.com/jonschlinkert/templates) | [homepage](https://github.com/jonschlinkert/templates "System for creating and managing template collections, and rendering templates with any node.js template engine. Can be used as the basis for creating a static site generator or blog framework.")
+* [verb](https://www.npmjs.com/package/verb): Documentation generator for GitHub projects. Verb is extremely powerful, easy to use, and is used… [more](https://github.com/verbose/verb) | [homepage](https://github.com/verbose/verb "Documentation generator for GitHub projects. Verb is extremely powerful, easy to use, and is used on hundreds of projects of all sizes to generate everything from API docs to readmes.")
 
-## Contributing
+### Contributing
 
-Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/helpers/helper-md/issues/new).
+Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).
 
-## Building docs
+Please read the [contributing guide](.github/contributing.md) for advice on opening issues, pull requests, and coding standards.
 
-Generate readme and API documentation with [verb](https://github.com/verbose/verb):
+### Contributors
 
-```sh
-$ npm install verb && npm run docs
-```
+| **Commits** | **Contributor** | 
+| --- | --- |
+| 14 | [jonschlinkert](https://github.com/jonschlinkert) |
+| 1 | [jonjhiggins](https://github.com/jonjhiggins) |
+| 1 | [ScottPolhemus](https://github.com/ScottPolhemus) |
 
-Or, if [verb](https://github.com/verbose/verb) is installed globally:
+### Building docs
 
-```sh
-$ verb
-```
+_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_
 
-## Running tests
-
-Install dev dependencies:
+To generate the readme, run the following command:
 
 ```sh
-$ npm install -d && npm test
+$ npm install -g verbose/verb#dev verb-generate-readme && verb
 ```
 
-## Author
+### Running tests
+
+Running and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:
+
+```sh
+$ npm install && npm test
+```
+
+### Author
 
 **Jon Schlinkert**
 
 * [github/jonschlinkert](https://github.com/jonschlinkert)
-* [twitter/jonschlinkert](http://twitter.com/jonschlinkert)
+* [twitter/jonschlinkert](https://twitter.com/jonschlinkert)
 
-## License
+### License
 
-Copyright © 2016, [Jon Schlinkert](https://github.com/jonschlinkert).
-Released under the [MIT license](https://github.com/helpers/helper-md/blob/master/LICENSE).
+Copyright © 2017, [Jon Schlinkert](https://github.com/jonschlinkert).
+Released under the [MIT License](LICENSE).
 
 ***
 
-_This file was generated by [verb](https://github.com/verbose/verb), v0.9.0, on May 13, 2016._
+_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.4.3, on March 31, 2017._
