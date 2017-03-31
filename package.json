@@ -4,6 +4,11 @@
   "version": "0.2.1",
   "homepage": "https://github.com/helpers/helper-md",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "contributors": [
+    "Jon Higgins (http://www.jonhiggins.co.uk)",
+    "Jon Schlinkert <jon.schlinkert@sellside.com> (http://twitter.com/jonschlinkert)",
+    "Scott Polhemus <scott@polhem.us> (http://polhem.us)"
+  ],
   "repository": "helpers/helper-md",
   "bugs": {
     "url": "https://github.com/helpers/helper-md/issues"
