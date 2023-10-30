@@ -127,10 +127,10 @@ describe('lodash:', function() {
 describe('highlight:', function(argument) {
   it('should support syntax highlighting', function() {
     var actual = md.sync("test/fixtures/e.md", {
-      highlight: function (code, lang) {
+      highlight: function (code, language) {
         try {
           try {
-            return hljs.highlight(code, { language: lang }).value;
+            return hljs.highlight(code, { language }).value;
           } catch (err) {
             if (!/Unknown language/i.test(err.message)) {
               throw err;
