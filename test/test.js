@@ -126,11 +126,11 @@ describe('lodash:', function() {
 
 describe('highlight:', function(argument) {
   it('should support syntax highlighting', function() {
-    var actual = md.sync('test/fixtures/e.md', {
-      highlight: function(code, lang) {
+    var actual = md.sync("test/fixtures/e.md", {
+      highlight: function (code, lang) {
         try {
           try {
-            return hljs.highlight(lang, code).value;
+            return hljs.highlight(code, { language: lang }).value;
           } catch (err) {
             if (!/Unknown language/i.test(err.message)) {
               throw err;
@@ -140,8 +140,11 @@ describe('highlight:', function(argument) {
         } catch (err) {
           return code;
         }
-      }
+      },
     });
-    assert.equal(actual, '<h1>EEE</h1>\n<pre><code><span class="hljs-keyword">var</span> <span class="hljs-keyword">message</span> = <span class="hljs-string">\'This is an alert\'</span>;\nalert(<span class="hljs-keyword">message</span>);\n</code></pre>\n');
+    assert.equal(
+      actual,
+      '<h1>EEE</h1>\n<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> message = <span class="hljs-string">\'This is an alert\'</span>;\n<span class="hljs-title function_">alert</span>(message);\n</code></pre>\n'
+    );
   });
 });
