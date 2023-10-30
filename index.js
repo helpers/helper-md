@@ -19,7 +19,7 @@ var ent = require('ent');
  * Expose `md` helper
  */
 
-var helper = (module.exports = function (name, options, cb) {
+var helper = module.exports = function (name, options, cb) {
   if (typeof options === 'function') {
     cb = options;
     options = {};
