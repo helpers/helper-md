@@ -9,7 +9,8 @@
 
 var fs = require('fs');
 var path = require('path');
-var Remarkable = require('remarkable');
+var { Remarkable } = require('remarkable');
+const { linkify } = require('remarkable/linkify');
 var extend = require('extend-shallow');
 var exists = require('fs-exists-sync');
 var ent = require('ent');
@@ -18,7 +19,7 @@ var ent = require('ent');
  * Expose `md` helper
  */
 
-var helper = module.exports = function(name, options, cb) {
+var helper = (module.exports = function (name, options, cb) {
   if (typeof options === 'function') {
     cb = options;
     options = {};
@@ -106,12 +107,23 @@ helper.sync = function(name, options) {
  */
 
 function markdown(options) {
-  return new Remarkable(extend({
-    breaks: false,
-    html: true,
-    langPrefix: 'lang-',
-    linkify: true,
-    typographer: false,
-    xhtmlOut: false
-  }, options));
+  const useLinkify = options.linkify === false ? false : true;
+  delete options.linkify;
+
+  let remarkable = new Remarkable(
+    extend(
+      {
+        breaks: false,
+        html: true,
+        langPrefix: 'lang-',
+        typographer: false,
+        xhtmlOut: false,
+      },
+      options
+    )
+  );
+  if (useLinkify) {
+    remarkable.use(linkify);
+  }
+  return remarkable;
 }
